@@ -1,5 +1,6 @@
 // This is the Link API
-import Link from 'next/link';
+import Link from 'next/link'
+import fetch from 'isomorphic-unfetch'
 
 // Pass this content as 'props' to child components
 const Index = props => (
