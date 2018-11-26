@@ -1,3 +1,4 @@
+//import dependencies
 import React, { Component } from 'react';
 
 // Define SearchForm Class
@@ -5,8 +6,7 @@ export default class SearchForm extends Component {
 // constructor accepts props and initialises state
         constructor(props) {
                 super(props);
-                this.state = {
-            };
+                this.state = {};
         }
 
 // an event handler for form submit
@@ -21,15 +21,14 @@ export default class SearchForm extends Component {
             }
         // prevent page reload (prevent submit)
             event.preventDefault();
-        }
+        };
     
     // Render the form
-
     render() {
         return (
             <div>
                 {/* Search Input */}
-                <div id="search">=
+                <div id="search">
                 <h3>Enter newsapi.org source</h3>
                 {/* Note event handler */} 
                     <form onSubmit={this.formSubmitted}>
@@ -39,11 +38,7 @@ export default class SearchForm extends Component {
                         <button>Update News</button>
                     </form>    
                 </div>
-    
             </div>
-    
         );
-    
     }
-    
-}
+} // End render()
