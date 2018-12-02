@@ -12,14 +12,14 @@ const Nav = () => (
             <li><Link href="/news"><a>News</a></Link></li>
             <li><Link href="/business"><a>Business</a></Link></li>
             <li><Link href="/sport"><a>Sport</a></Link></li>
-            <li><Link href="/weather"><a>Weather</a></Link></li>
+            <li><Link href="/technology"><a>Technology</a></Link></li>
            </ul>
        </nav>
        {/* Define css for this page or component */}
        {/* Note back ticks `` surrounding css are required */}
        <style jsx>{`
         nav {
-            max-width: 900px;
+            max-width: 100%;
             background: #f0f0f0;
             border: 1px solid #ccc;
             border-right: none;

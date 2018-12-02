@@ -1,13 +1,13 @@
 const Header = () => (
     <div>
-        <h2 className="title">My News Site</h2>
+        <h1 className="title">My News Site</h1>
         <style jsx>{`
 
 
-            h2.title {
+            h1.title {
                 font-family: "Arial";
                 color: #535151;
-                padding: 5px;
+                padding: 0;
             }
 
 

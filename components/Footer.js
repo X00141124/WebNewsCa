@@ -6,11 +6,11 @@ const Footer = () => (
         </footer>
         <style jsx>{`
             footer {
-                background-color: #a19f9f;
-                max-width: 900px;
+                background-color: #bb1919;
+                max-width: 100%;
                 font-size: 0.8em;
                 text-align: center;
-                color: #a19f9f;
+                color: white;
                 clear: both;
             }
         `}</style>

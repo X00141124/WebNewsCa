@@ -8,15 +8,12 @@ import Link from 'next/link';
 // Import fetch library
 import fetch from 'isomorphic-unfetch';
 
-// import SearchForm Component
-import SearchForm from '../components/SearchForm';
 // import Dropdown
 import Dropdown from '../components/Dropdown';
-//(free version) API key from https://newsapi.org/
 // Get your own key!
 const apiKey = '56adcf6299204eec895e8209a109cd06';
 // Initial News source
-const defaultNewsSource = 'BBC-News'
+const defaultNewsSource = 'BBC-Sport'
 
 //
 // getNews(url) is an async method which fetches and returns data (or an error) from a WWW API
@@ -87,56 +84,33 @@ export default class News extends React.Component {
   //Return the page content
     return (
       <div>
-        <div className="header">
-          <h2 className="header">News</h2>
+        <div className="head">
+        <h2 className="head">Sport News</h2>
         </div>
-
-      <div className="form">
-        {/* add the Dropdown component */}
         <div className="dropdown">
         <Dropdown setNewsSource={this.setNewsSource} visible={false} selected={0} options={[
           {
-            "link": "bbc-news",
-            "display": "BBC"
+            "link": "bbc-sport",
+            "display": "BBC Sport"
           },
           {
-            "link": "cnn",
-            "display": "CNN"
+            "link": "espn",
+            "display": "ESPN"
           },
           {
-            "link": "fox-news",
-            "display": "Fox News"
+            "link": "fox-sports",
+            "display": "Fox Sports"
           },
           {
-            "link": "rte",
-            "display": "RTE"
+            "link": "talksport",
+            "display": "TalkSport"
           },
           {
-            "link": "mirror",
-            "display": "Mirror"
-          },
-          {
-            "link": "google-news",
-            "display": "Google News"
+            "link": "nfl-news",
+            "display": "NFL Sport"
           },
         ]}></Dropdown>
         </div>
-        <div className="search">
-        {/*Add the searchForm component*/}
-        {/*Pass the setNewsSource function as a prop with the same name*/}
-        <SearchForm setNewsSource={this.setNewsSource}/>
-        </div>
-      </div>
-
-        {/*Example search links*/}
-        <ul className="newsMenu">
-          <li><a href="a" onClick={this.searchNewsAPI} name="top-headlines?country=ie">Top Headlines Ireland</a></li>
-          <li><a href="a" onClick={this.searchNewsAPI} name="top-headlines?country=ie&category=business">Business News Ireland</a></li>
-          <li><a href="a" onClick={this.searchNewsAPI} name="everything?q=technology">Technology News</a></li>
-          <li><a href="a" onClick={this.searchNewsAPI} name="top-headlines?country=ie&category=weather">Weather in Ireland</a></li>
-        </ul>
-
-
         { /* Display a title based on source */}
         <h3>{this.state.newsSource.split("-").join(" ")}</h3>
         <div>
@@ -150,7 +124,7 @@ export default class News extends React.Component {
               <img src={article.urlToImage} alt="article image" className="img-article"></img>            
               <p>{article.description}</p>            
               <p>{article.content}</p>            
-              <p><Link href={article.url}><a>Read More</a></Link></p>                        
+              <p><Link href={article.url}><a>Read More</a></Link></p>                       
             </section>
           ))}
         </div>
@@ -166,36 +140,16 @@ export default class News extends React.Component {
             padding: .5em;
             margin: .5em;
             float: left;
-            overflow: auto;            
+            overflow: auto;
           }
-          h2.header {
+          h2.head {
             margin: 0;
             padding: 0;
           }
-          .header {
+          .head {
             padding: 5px;
-            background-color: #bb1919;
+            background-color: #1a19bb;
             color:white;            
-          }
-          .form{
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            height: 150px;
-            border: none;
-            background-color: white;
-            float: centre;
-            padding-top: 2px;
-            margin-top: .5em;
-            overflow: auto;
-          }
-          .dropdown {
-            float: right;
-            width 65%;
-          }
-          .search {
-            width: 35%;
-            float: left;
           }
           .author {
             font-style: italic;
@@ -204,25 +158,12 @@ export default class News extends React.Component {
           .img-article {
             max-width: 50%;
           }
-          .newsMenu {
-            display: flex;
-            flex-direction: row;
-            margin: 0;
-            padding: 0;
-            margin-top: 20px;
-          }
-          .newsMenu li {
-            display: inline-table;
-            padding-left: 20px;
-          }
-          .newsMenu li a {
-            font-size: 1em;
-            color: black;
-            text-decoration: none;
-          }
-          .newsMenu li a:hover {
-            color: #bb1919;
-            text-decoration: underline;
+          .dropdown {
+            width: 65%;
+            float: centre;
+            padding-top: 2px;
+            margin-top: .5em;
+            overflow: auto;
           }
         `}</style>
       </div>

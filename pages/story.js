@@ -11,7 +11,7 @@ const Story = props => (
 
 
   Story.getInitialProps = async function() {
-    const res = await fetch(url);
+    const res = await fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=56adcf6299204eec895e8209a109cd06');
     const data = await res.json();
 
     console.log(`Show data fetched. Count: ${data.articles.length}`);
